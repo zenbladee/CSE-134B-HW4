@@ -8,6 +8,7 @@
     --color-text: rgb(92, 42, 9);
     --color-button: rgb(255, 115, 34);
     --color-button-border: rgb(240, 97, 2);
+    --outline-color: rgb(92,42, 9);
 
     /* Font Stack */
     --font-all: "Times New Roman", Times, serif;
@@ -287,4 +288,78 @@ project-card {
     margin-bottom: 1rem;
     margin-top: 1rem;
     padding: var(--padding);
+}
+
+/*form css*/
+
+form {
+    width: 100%;
+    max-width: 50rem;
+    margin-inline: auto; /* Centers form horizontally */
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.field small {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+.field input, .field textarea {
+    background-color: white;
+    width: 100%;
+    box-sizing: border-box;
+    font: inherit;
+    color: var(--color-text);
+    padding: 0.5rem;
+    border: 2px solid var(--outline-color);
+    border-radius: 0.25rem;
+}
+
+.field input::placeholder, .field textarea::placeholder {
+    color: var(--color-text);
+    opacity: 0.75;
+}
+
+.field input:user-invalid, .field textarea:user-invalid {
+    border-style: dashed;
+    border-color: var(--outline-color);
+}
+
+.field input:user-valid, .field textarea:user-valid {
+    border-style: solid;
+    border-color: var(--outline-color);
+}
+
+textarea {
+    resize: vertical;
+}
+
+textarea:focus, input:focus {
+    outline: 3px solid var(--outline-color);
+    outline-offset: 2px;
+}
+
+button[type="submit"] {
+    background-color: var(--color-button);
+    color: var(--color-text);
+    font: inherit;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 3px solid var(--color-blocks);
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-blocks);
+    border: 3px solid var(--color-button);
+    color: var(--color-text);
 }
